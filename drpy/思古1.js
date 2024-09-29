@@ -43,7 +43,7 @@ var rule={
                 parse: 0
             }
         } else if (/youku|iqiyi|v\\.qq\\.com|pptv|sohu|le\\.com|1905\\.com|mgtv|bilibili|ixigua/.test(url)) {
-            let play_Url = /bilibili/.test(url) ? 'https://jx.xmflv.com/?url=' : 'https://jx.777jiexi.com/player/?url='; // type0的parse
+            let play_Url = /NBY/.test(url) ? 'https://jx.siguyy5.com/player/analysis.php?v=' : 'https://jx.xmflv.com/?url='; // type0的parse
             input = {
                 jx: 0,
                 url: url,
