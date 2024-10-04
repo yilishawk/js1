@@ -19,6 +19,7 @@ var rule = {
   },
     class_name:'电视剧&电影&综艺&短剧',//静态分类名称拼接
     class_url:'2&1&3&21',//静态分类标识拼接
+	tab_remove:['仓库2'],
   play_parse: true,
  lazy:`js:
         var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
