@@ -19,7 +19,6 @@ var rule = {
   },
     class_name:'电视剧&电影&综艺&短剧',//静态分类名称拼接
     class_url:'2&1&3&21',//静态分类标识拼接
-	tab_remove:['仓库2'],
   play_parse: true,
  lazy:`js:
         var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
@@ -59,7 +58,7 @@ var rule = {
     img: '.module-item-pic&&img&&data-original',
     desc: '.module-info-item:eq(2)&&Text;.module-info-item:eq(1)&&Text;.module-info-tag-link:eq(1)&&Text',
     content: 'p:eq(0)&&Text',
-    tabs: '.module-tab-item.tab-item',
+    tabs: '.module-tab-item.tab-item span',
     lists: '.module-play-list-content:eq(#id) a',
   },
   搜索: '.module-card-item.module-item;.lazyload&&alt;.lazyload&&data-original;.module-item-note&&Text;a&&href;.fed-deta-content&&Text',
