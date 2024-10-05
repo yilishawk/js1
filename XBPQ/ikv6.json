@@ -1,7 +1,7 @@
 {
     "作者":"凯哥",
     "站名":"耐看点播",
-//"头部集合": "User-Agent$Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36#authority$www.nkvod.com",
+"头部集合": "User-Agent$Mozilla/5.0 (Windows NT 10.0; Win64; x64; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.6478.61 Chrome/126.0.6478.61 Not/A)Brand/8 Safari/537.36#cookie$ecPopup=1",
     //"主页url":"https://nkvlog.com/",
     "二次截取":"list\":[&&]",
     "数组":"{&&}",
