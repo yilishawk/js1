@@ -23,7 +23,35 @@ var rule={
     class_name:'电视剧&电影&综艺',//静态分类名称拼接
     class_url:'1&2&4',//静态分类标识拼接
 	play_parse: true,
-               lazy: "js:\n  let html = request(input);\n  let hconf = html.match(/r player_.*?=(.*?)</)[1];\n  let json = JSON5.parse(hconf);\n  let url = json.url;\n  if (json.encrypt == '1') {\n    url = unescape(url);\n  } else if (json.encrypt == '2') {\n    url = unescape(base64Decode(url));\n  }\n  if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {\n    input = {\n      parse: 0,\n      jx: 0,\n      url: url,\n    };\n  } else {\n    input = url && url.startsWith('http') && tellIsJx(url) ? {parse:0,jx:1,url:url}:input;\n  }",
+          lazy:`js:
+        var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+        var url = html.url;
+        if (html.encrypt == '1') {
+            url = unescape(url)
+        } else if (html.encrypt == '2') {
+            url = unescape(base64Decode(url))
+        }
+        if (/\\.m3u8|\\.mp4/.test(url)) {
+            input = {
+                jx: 0,
+                url: url,
+                parse: 0
+            }
+        } else if (/NBY|youku|iqiyi|v\\.qq\\.com|pptv|sohu|le\\.com|1905\\.com|mgtv|bilibili|ixigua/.test(url)) {
+            let play_Url = /bilibili/.test(url) ? 'https://jiexi.ibaopian.pro/player/analysis.php?v=' : 'https://api.cloverplayer.com/analysis.php?v='; // type0的parse
+            input = {
+                jx: 0,
+                url: url,
+                playUrl: play_Url,
+                parse: 1,
+                header: JSON.stringify({
+                    'user-agent': 'Mozilla/5.0',
+                }),
+            }
+        } else {
+            input
+        }
+    `,    
 	limit:6,
     tab_order:['VIP线路','BF线路','LZ线路','FF线路'],
 	推荐: '.myui-panel.myui-panel-bg.clearfix li.col-lg-5.col-md-6;.lazyload&&title;.lazyload&&data-original;.pic-text.text-right&&Text;a&&href',
