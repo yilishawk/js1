@@ -14,7 +14,7 @@ var rule = {
             },
       class_name:'电影&电视剧&短剧&综艺',//静态分类名称拼接
     class_url:'1&2&6&4',//静态分类标识拼接
-  图片替换:'https://www.keke6.app/=>https://61.147.93.252:15002/',
+  图片替换:'https://www.kkys02.com/=>https://61.147.93.252:15002/',
   //class_parse: '.fs-margin.menu li:gt(1):lt(8);a&&Text;a&&href;/(\\d+)',
   tab_remove: ['4K(高峰不卡)'],
   tab_order:['蓝光①','自建1','黑采','YZ','LZ','FF','BF'],
