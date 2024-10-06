@@ -1,6 +1,9 @@
 var rule = {
   title: '可可影视',
-  host: 'https://www.keke6.app/',
+  //host: 'https://www.keke6.app/',
+  host:'https://dl.keke6.app/',
+	hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":MOBILE_UA}});let src = jsp.pdfh(html,"body&&.section-row:eq(1)&&a&&href");print(src);HOST=src',
+	
   url: '/show/fyclass-----3-fypage.html',
   searchUrl: '/search?os=pc&k=**',
   searchable: 2,
