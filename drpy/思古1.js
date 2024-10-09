@@ -39,7 +39,7 @@ var rule = {
                 url: url,
                 parse: 0
             }
-        } else if (/NBY|youku|iqiyi|v\\.qq\\.com|pptv|sohu|le\\.com|1905\\.com|mgtv|bilibili|ixigua/.test(url)) {
+        } else if (/NBY-|XMYAES|youku|iqiyi|v\\.qq\\.com|pptv|sohu|le\\.com|1905\\.com|mgtv|bilibili|ixigua/.test(url)) {
             let play_Url = /NBY/.test(url) ? 'https://jx.siguyy5.com/player/analysis.php?v=' : 'https://www.ckplayer.vip/jiexi/?url='; // type0的parse
             input = {
                 jx: 0,
